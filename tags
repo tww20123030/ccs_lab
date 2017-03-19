@@ -1,0 +1,165 @@
+%-exstack	Makefile	/^%-exstack: %$/
+%-nxstack	Makefile	/^%-nxstack: %$/
+%-withssp.o	Makefile	/^%-withssp.o: %.c$/
+%.bin	Makefile	/^%.bin: %.o$/
+%.o	Makefile	/^%.o: %.c$/
+.PHONY	Makefile	/^.PHONY: all$/
+.PHONY	Makefile	/^.PHONY: check-bugs$/
+.PHONY	Makefile	/^.PHONY: check-crash$/
+.PHONY	Makefile	/^.PHONY: check-exstack$/
+.PHONY	Makefile	/^.PHONY: check-libc$/
+.PHONY	Makefile	/^.PHONY: check-zoobar$/
+.PHONY	Makefile	/^.PHONY: check$/
+.PHONY	Makefile	/^.PHONY: fix-flask$/
+.PHONY	Makefile	/^.PHONY: clean$/
+.PHONY	Makefile	/^.PHONY: prepare-submit$/
+.PHONY	Makefile	/^.PHONY: prepare-submit-a$/
+.PHONY	Makefile	/^.PHONY: prepare-submit-b$/
+.PHONY	Makefile	/^.PHONY: submit-a$/
+.PHONY	Makefile	/^.PHONY: submit-b$/
+.PHONY	Makefile	/^.PHONY: submit$/
+.PRECIOUS	Makefile	/^.PRECIOUS: lab1-handin.tar.gz$/
+.globl	shellcode.S	/^.globl main$/
+ASFLAGS	Makefile	/^ASFLAGS := -m32$/
+Benjamin	LICENSE	4
+CFLAGS	Makefile	/^CFLAGS  := -m32 -g -std=c99 -Wall -Werror -D_GNU_S/
+CLAIM	LICENSE	22
+CONTRACT	LICENSE	23
+Chandra	LICENSE	4
+DIFF	fix-flask.sh	3
+F	clean-env.sh	10
+FROM	LICENSE	23
+F¢	zookfs	13
+F¢	zookfs-exstack	13
+F¢	zookfs-nxstack	13
+HOST	check-part2.sh	3
+HOST	check-part3.sh	3
+IMPLIED	LICENSE	19
+KIND	LICENSE	18
+LDFLAGS	Makefile	/^LDFLAGS := -m32$/
+LDLIBS	Makefile	/^LDLIBS  := -lcrypto$/
+LIABILITY	LICENSE	22
+MAX_GIDS	zookld.c	19
+MAX_SERVICES	zookd.c	12
+MAX_SERVICES	zookld.c	18
+MERCHANTABILITY	LICENSE	20
+Mcheck_zoobar.py	check_zoobar.py	/^def main():$/
+Mrun-shellcode	run-shellcode.c	/^main(int ac, char **av)$/
+Msubmit.py	submit.py	/^def main(filename):$/
+Mzookd	zookd.c	/^int main(int argc, char **argv)$/
+Mzookfs	zookfs.c	/^int main(int argc, char **argv)$/
+Mzookld	zookld.c	/^int main(int argc, char **argv)$/
+OTHERWISE	LICENSE	23
+PASS	check-part2.sh	15
+PASS	check-part3.sh	11
+PATH	Makefile	/^      PATH := $(PATH):\/usr\/sbin$/
+PROGS	Makefile	/^PROGS   := zookld zookfs zookd \\$/
+PWD	clean-env.sh	24
+Software	LICENSE	11
+THISYEAR	check-bin.sh	2
+Thomas	LICENSE	3
+Wang	LICENSE	3
+ZOOK_CONF	zookld.c	17
+Zeldovich	LICENSE	3
+_	zookd-withssp	18
+all	Makefile	/^all: $(PROGS)$/
+build_exploit	exploit-template.py	/^def build_exploit(shellcode):$/
+cgi_gid	http.c	247
+cgi_uid	http.c	246
+charge	LICENSE	7
+check	Makefile	/^check: check-zoobar check-bugs check-crash check-e/
+check	z_client.py	/^def check():$/
+check-bugs	Makefile	/^check-bugs:$/
+check-crash	Makefile	/^check-crash: bin.tar.gz exploit-2a.py exploit-2b.p/
+check-exstack	Makefile	/^check-exstack: bin.tar.gz exploit-3.py shellcode.b/
+check-libc	Makefile	/^check-libc: bin.tar.gz exploit-4a.py exploit-4b.py/
+check-zoobar	Makefile	/^check-zoobar:$/
+check_ex0	check_zoobar.py	/^def check_ex0():$/
+check_zoobars	z_client.py	/^def check_zoobars(html, user, zoobars, zmsg):$/
+clean	Makefile	/^clean:$/
+copy	LICENSE	10
+dir_join	http.c	/^void dir_join(char *dst, const char *dirname, cons/
+distribute	LICENSE	11
+env_deserialize	http.c	/^void env_deserialize(const char *env, size_t len)$/
+fdprintf	http.c	/^void fdprintf(int fd, char *fmt, ...)$/
+file_read	check_zoobar.py	/^def file_read(pn):$/
+file_read	z_client.py	/^def file_read(pn):$/
+file_write	z_client.py	/^def file_write(pn, data):$/
+fix-flask	Makefile	/^fix-flask: fix-flask.sh$/
+get	z_client.py	/^def get(url, cookies):$/
+gids	zookld.c	26
+granted	LICENSE	7
+green	check_zoobar.py	/^def green(s):$/
+group_parse_cb	zookld.c	/^static int group_parse_cb(const char *gid_str, int/
+gü	zookld.o	30
+http_err	http.c	/^void http_err(int fd, int code, char *fmt, ...)$/
+http_read_line	http.c	/^int http_read_line(int fd, char *buf, size_t size)/
+http_request_headers	http.c	/^const char *http_request_headers(int fd)$/
+http_request_line	http.c	/^const char *http_request_line(int fd, char *reqpat/
+http_serve	http.c	/^void http_serve(int fd, const char *name)$/
+http_serve_directory	http.c	/^void http_serve_directory(int fd, const char *pn) /
+http_serve_executable	http.c	/^void http_serve_executable(int fd, const char *pn)/
+http_serve_file	http.c	/^void http_serve_file(int fd, const char *pn)$/
+http_serve_none	http.c	/^void http_serve_none(int fd, const char *pn)$/
+http_set_executable_uid_gid	http.c	/^http_set_executable_uid_gid(int uid, int gid)$/
+ifeq ($(filter /usr/sbin,$(subst	Makefile	/^    ifeq ($(filter \/usr\/sbin,$(subst :, ,$(PATH)))/
+killall	check_zoobar.py	/^def killall():$/
+lab%-handin.tar.gz	Makefile	/^lab%-handin.tar.gz: clean$/
+launch_svc	zookld.c	/^pid_t launch_svc(CONF *conf, const char *name)$/
+log	check_zoobar.py	/^def log(*m):$/
+log_exit	check_zoobar.py	/^def log_exit(*m):$/
+login	z_client.py	/^def login(user, password):$/
+login_page	z_client.py	/^def login_page(op, user, password):$/
+merge	LICENSE	10
+modify	LICENSE	10
+ngids	zookld.c	25
+nsvcs	zookd.c	13
+nsvcs	zookld.c	23
+parse	check-bugs.py	/^def parse(pn):$/
+pid	check-part2.sh	34
+pid	check-part3.sh	32
+port	zook.conf	2
+port	zook-exstack.conf	2
+port	zook-nxstack.conf	2
+port	zook-withssp.conf	2
+post	z_client.py	/^def post(url, cookies, postdata):$/
+prepare-submit	Makefile	/^prepare-submit: lab1-handin.tar.gz$/
+prepare-submit-a	Makefile	/^prepare-submit-a: lab1a-handin.tar.gz$/
+prepare-submit-b	Makefile	/^prepare-submit-b: lab1b-handin.tar.gz$/
+print_wget_log	z_client.py	/^def print_wget_log():$/
+process_client	zookd.c	/^static void process_client(int fd)$/
+publish	LICENSE	10
+recvfd	http.c	/^ssize_t recvfd(int socket, void *buffer, size_t le/
+red	check_zoobar.py	/^def red(s):$/
+register	z_client.py	/^def register(user, password):$/
+restriction	LICENSE	9
+run-shellcode	Makefile	/^run-shellcode: %: %.o$/
+run_wget	z_client.py	/^def run_wget(opts=[]):$/
+say_fail	check-bugs.py	/^def say_fail(reason):$/
+say_pass	check-bugs.py	/^def say_pass(reason):$/
+send_req	exploit-template.py	/^def send_req(host, port, req):$/
+sendfd	http.c	/^ssize_t sendfd(int socket, const void *buffer, siz/
+service_parse_cb	zookld.c	/^static int service_parse_cb(const char *name, int /
+setup	check_zoobar.py	/^def setup():$/
+sh	check_zoobar.py	/^def sh(cmd, exit_onerr=True):$/
+so	LICENSE	12
+split_path	http.c	/^void split_path(char *pn)$/
+staff-bin	Makefile	/^staff-bin: zookld zookd-exstack zookfs-exstack zoo/
+start_server	zookld.c	/^static int start_server(const char *portstr)$/
+stat_summary	check-bugs.py	/^def stat_summary(ans):$/
+sublicense	LICENSE	11
+submit	Makefile	/^submit: lab1-handin.tar.gz$/
+submit-a	Makefile	/^submit-a: lab1a-handin.tar.gz$/
+submit-b	Makefile	/^submit-b: lab1b-handin.tar.gz$/
+svcfds	zookd.c	14
+svcfds	zookld.c	21
+svcnames	zookld.c	22
+svcurls	zookd.c	15
+touch	http.c	/^void touch(const char *name) {$/
+transfer	z_client.py	/^def transfer(sender_cookies, recipient, zoobars):$/
+url_decode	http.c	/^void url_decode(char *dst, const char *src)$/
+use	LICENSE	10
+valid_cgi_script	http.c	/^valid_cgi_script(struct stat *st)$/
+view_user	z_client.py	/^def view_user(cookies, username):$/
+zookfs-withssp zookd-withssp	Makefile	/^zookfs-withssp zookd-withssp: %: %.o http-withssp./
+zookld zookd zookfs	Makefile	/^zookld zookd zookfs: %: %.o http.o$/

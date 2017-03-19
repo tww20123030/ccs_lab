@@ -1,0 +1,56 @@
+#
+# [file:#lines]
+# desc
+#
+
+[http.c:105]
+description goes here.the 'reqpath' variable can be overwritten by the 'spl' variable,becuse spl may have many '%' or '+' which can be used to overwrite reqpath.  
+    <paste offending line(s) of code here>
+        url_decode(reqpath, sp1);
+        if (src[0] == '%' && src[1] && src[2])
+        {   
+            char hexbuf[3];
+            hexbuf[0] = src[1];
+            hexbuf[1] = src[2];
+            hexbuf[2] = '\0';
+
+            *dst = strtol(&hexbuf[0], 0, 16);
+            src += 3;
+        }   
+        else if (src[0] == '+') /* can be overwritten*/
+        {   
+            *dst = ' ';
+            src++;
+        }  
+
+# many more come here
+[http.c:120]
+description goes here.the 'value' variable can be overwritten by the 'sp' variable,because sp may have many '%' or '+' which can be used to overwrite value.
+        <paste offending line(s) of code here>
+        char value[512];
+        url_decode(value, sp);
+
+[http.c:121]
+description goes here.the 'envvar' variable can be overwritten by the 'buf' variable,because the length of 'buf' may be longer than 'envvar'. 
+        <paste offending line(s) of code here>
+        char envvar[512];
+        if (strcmp(buf, "CONTENT_TYPE") != 0 &&
+            strcmp(buf, "CONTENT_LENGTH") != 0) {
+            sprintf(envvar, "HTTP_%s", buf);
+            setenv(envvar, value, 1); 
+        }
+
+[http.c:276]
+description goes here.the 'name' variable can be overwritten by the 'pn' variable,because the length of 'pn' may be longer than 'name' and the strcpy function may make the new string overwrite the 'name' variable.
+        <paste offending line(s) of code here>
+        char name[1024];
+        dir_join(name, pn, indices[i]);
+        void dir_join(char *dst, const char *dirname, const char *filename) {
+        strcpy(dst, dirname);
+        if (dst[strlen(dst) - 1] != '/')
+        strcat(dst, "/");
+        strcat(dst, filename);
+        }
+
+
+
