@@ -27,6 +27,38 @@ CLAIM	LICENSE	22
 CONTRACT	LICENSE	23
 Chandra	LICENSE	4
 DIFF	fix-flask.sh	3
+Disassembly	zookd-exstack.asm	/^Disassembly of section .interp:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .note.ABI-tag:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .note.gnu.build-id:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .gnu.hash:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .dynsym:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .dynstr:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .gnu.version:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .gnu.version_r:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .rel.dyn:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .rel.plt:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .init:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .plt:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .text:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .fini:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .rodata:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .eh_frame_hdr:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .eh_frame:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .init_array:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .fini_array:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .jcr:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .dynamic:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .got:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .got.plt:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .data:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .bss:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .comment:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_aranges:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_info:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_abbrev:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_line:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_str:$/
+Disassembly	zookd-exstack.asm	/^Disassembly of section .debug_ranges:$/
 F	clean-env.sh	10
 FROM	LICENSE	23
 F¢	zookfs	13
@@ -78,6 +110,7 @@ check_ex0	check_zoobar.py	/^def check_ex0():$/
 check_zoobars	z_client.py	/^def check_zoobars(html, user, zoobars, zmsg):$/
 clean	Makefile	/^clean:$/
 copy	LICENSE	10
+dir_join	bugs.txt	/^        void dir_join(char *dst, const char *dirna/
 dir_join	http.c	/^void dir_join(char *dst, const char *dirname, cons/
 distribute	LICENSE	11
 env_deserialize	http.c	/^void env_deserialize(const char *env, size_t len)$/
@@ -106,6 +139,14 @@ ifeq ($(filter /usr/sbin,$(subst	Makefile	/^    ifeq ($(filter \/usr\/sbin,$(sub
 killall	check_zoobar.py	/^def killall():$/
 lab%-handin.tar.gz	Makefile	/^lab%-handin.tar.gz: clean$/
 launch_svc	zookld.c	/^pid_t launch_svc(CONF *conf, const char *name)$/
+line	'	/^    <paste offending line(s) of code here>$/
+line	'	/^        <paste offending line(s) of code here>$/
+line	'	/^        <paste offending line(s) of code here>$/
+line	bugs.txt	/^        <paste offending line(s) of code here>$/
+line	bugs.txt	/^        <paste offending line(s) of code here>$/
+line	bugs.txt	/^        <paste offending line(s) of code here>$/
+line	bugs.txt	/^        <paste offending line(s) of code here>$/
+line	bugs.txt	/^        <paste offending line(s) of code here>$/
 log	check_zoobar.py	/^def log(*m):$/
 log_exit	check_zoobar.py	/^def log_exit(*m):$/
 login	z_client.py	/^def login(user, password):$/
@@ -157,9 +198,18 @@ svcnames	zookld.c	22
 svcurls	zookd.c	15
 touch	http.c	/^void touch(const char *name) {$/
 transfer	z_client.py	/^def transfer(sender_cookies, recipient, zoobars):$/
+url_decode	bugs.txt	/^        void url_decode(char *dst, const char *src/
 url_decode	http.c	/^void url_decode(char *dst, const char *src)$/
 use	LICENSE	10
 valid_cgi_script	http.c	/^valid_cgi_script(struct stat *st)$/
+variable	'	7
+variable	'	28
+variable	'	44
+variable	bugs.txt	7
+variable	bugs.txt	38
+variable	bugs.txt	49
+variable	bugs.txt	64
+variable	bugs.txt	75
 view_user	z_client.py	/^def view_user(cookies, username):$/
 zookfs-withssp zookd-withssp	Makefile	/^zookfs-withssp zookd-withssp: %: %.o http-withssp./
 zookld zookd zookfs	Makefile	/^zookld zookd zookfs: %: %.o http.o$/

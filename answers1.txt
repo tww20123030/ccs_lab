@@ -1,4 +1,15 @@
 ## Place your answers here.
+Exercise 2:
+  exploit-2a.py
+    对reqpath[2048]进行overflow，构造url中的PATH为"/+++++++..."长度为2073，恰好覆盖完return address。
+  exploit-2b.py 
+    对pn[1024]进行overflow，构造url中的PATH为"/+++.."长度为1025，覆盖掉ebp，并且保留buffer中函数指针的值，以免函数在返回前crash而不能体现buffer overflow的效果。
+
+Exercise 3:
+    所有在Exercise 1中找到的bug,原则上都可以应用于此类对executeable stack的code injection攻击，只是难易程度不同。经过测试，利用url 中的path进行攻击比较简单，利用http header攻击需要精细地考虑url格式，使得能成功注入。
+
+Exercise 4:
+    所有在Exercise 1中找到的bug,原则上都可以应用于此类对non-executeable stack的return to libc 攻击.攻击时最好选择参数较少的system call,尽量直接调用，通过构造栈来传递参数等。
 
 Exercise 5:
 

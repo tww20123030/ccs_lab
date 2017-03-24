@@ -1,5 +1,5 @@
 
-zookd-exstack:     file format elf32-i386
+zookd-nxstack:     file format elf32-i386
 
 
 Disassembly of section .init:

@@ -219,7 +219,7 @@ void split_path(char *pn)
             *slash = '/';
         else
             slash = pn + strlen(pn);
-        /*set all '/' in the path to '\0'-tww */
+        /*set all '/' exclude first in the path to '\0'-tww */
         while (--slash > pn) {
             if (*slash == '/') {
                 *slash = '\0';
@@ -227,7 +227,7 @@ void split_path(char *pn)
             }
         }
 
-        if (slash == pn) {/*not '/' in path */
+        if (slash == pn) {/*no '/' in path */
             slash = NULL;
             break;
         }
@@ -445,7 +445,7 @@ void url_decode(char *dst, const char *src)
             hexbuf[1] = src[2];
             hexbuf[2] = '\0';
 
-            *dst = strtol(&hexbuf[0], 0, 16);
+            *dst = strtol(&hexbuf[0], 0, 16); //8 bit
             src += 3;
         }
         else if (src[0] == '+') 
